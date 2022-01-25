@@ -2,14 +2,14 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import { products } from "./products";
-import Nav from "./Nav"
+import Nav from "./Nav";
 // import DisplayProducts from "./DisplayProducts";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: products,
+      items: products
     };
   }
 
@@ -27,17 +27,25 @@ class App extends Component {
     }
   };
 
+  removeBtn = (rmvvalue) => {
+    if (rmvvalue.value > 0) {
+      const updateValue = rmvvalue.value - rmvvalue.value;
+      // const updateValue = 0;
+      this.setState({ updateValue });
+    }
+  };
+
   render() {
     return (
       <div class="shop_cart">
         <Nav
           ItemCount={this.state.items
             .map((prod) => prod.value)
-            .reduce((acc, curr, index) => acc + curr, 0)}
-
-            prods={this.state.items}
-            increaseBtn={this.increaseBtn}
-            decreaseBtn={this.decreaseBtn}
+            .reduce((acc, curr) => acc + curr, 0)}
+          prods={this.state.items}
+          increaseBtn={this.increaseBtn}
+          decreaseBtn={this.decreaseBtn}
+          removeBtn={this.removeBtn}
         />
         {/* <DisplayProducts
           prods={this.state.items}
