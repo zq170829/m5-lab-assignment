@@ -1,9 +1,6 @@
-
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import React, { useState } from "react";
 
 export default function Cart(props) {
   return (
@@ -49,12 +46,11 @@ function DisplayCart(props) {
             <div key={prod.id} className="border">
               <img src={prod.image} alt={prod.desc} width="150" />
               <p className="qty d-inline mx-5">Quantity: {prod.value}</p>
-              {/* <FaTrash
-                size={20}
-                color="var(--text)"
-                style={{ cursor: "pointer" }}
-                onClick={() => props.removeBtn(prod)}
-              /> */}
+              <button
+              className="btn btn-light"
+              onClick={() => props.removeBtn(prod)}
+            >X
+            </button>
               <p className="px-4">{prod.desc}</p>
             </div>
           );

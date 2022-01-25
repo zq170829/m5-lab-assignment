@@ -51,11 +51,21 @@ function CheckOut() {
 
 function LoginForm() {
   return (
-    <form className="border mt-3 mb-5 p-3 bg-white">
+    <form className="form-group border mt-3 mb-5 p-3 bg-white">
       <label className="m-2">Name:</label>
-      <input type="text" name="name" placeholder="Your Name" />
+      <input
+        className="form-control"
+        type="text"
+        name="name"
+        placeholder="Your Name"
+      />
       <label className="m-2">Email:</label>
-      <input type="email" name="email" placeholder="Your Email" />
+      <input
+        className="form-control"
+        type="email"
+        name="email"
+        placeholder="Your Email"
+      />
       <input
         type="submit"
         value="Login"

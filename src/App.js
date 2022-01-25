@@ -29,8 +29,8 @@ class App extends Component {
 
   removeBtn = (rmvvalue) => {
     if (rmvvalue.value > 0) {
-      const updateValue = rmvvalue.value - rmvvalue.value;
-      // const updateValue = 0;
+      // const updateValue = rmvvalue.value - rmvvalue.value;
+      const updateValue = 0;
       this.setState({ updateValue });
     }
   };
