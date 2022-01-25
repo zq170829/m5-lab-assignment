@@ -1,7 +1,5 @@
-import FacebookLogin from "react-facebook-login";
-import { Modal } from "react-bootstrap";
+
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CheckOut from "./CheckOut";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
