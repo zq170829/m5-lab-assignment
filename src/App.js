@@ -9,7 +9,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: products
+      // sortType: "asc",
+      // listNum: "",
+      items: products,
     };
   }
 
@@ -27,17 +29,38 @@ class App extends Component {
     }
   };
 
-  removeBtn = (rmvvalue) => {
-    if (rmvvalue.value > 0) {
-      // const updateValue = rmvvalue.value - rmvvalue.value;
-      const updateValue = 0;
-      this.setState({ updateValue });
+  // removeBtn = (rmvvalue) => {
+  //   if (rmvvalue.value > 0) {
+  //     // const updateValue = rmvvalue.value - rmvvalue.value;
+  //     const updateValue = 0;
+  //     this.setState({ updateValue });
+  //   }
+  // };
+
+  onSort = (listNum, sortType) => {
+    // console.log("listNum", listNum);
+    switch (sortType) {
+      case 'lowest':
+        listNum.sort(function(a,b) {
+          return a.price - b.price
+        });
+        break;
+      case 'highest':
+        listNum.sort(function(a,b) {
+          return b.price - a.price
+        });
+        break;
+      default :
+        listNum.sort(function(a,b) {
+          return a.id - b.id
+        });
     }
+    this.setState({ items: listNum});
   };
 
   render() {
     return (
-      <div class="shop_cart">
+      <div className="shop_cart">
         <Nav
           ItemCount={this.state.items
             .map((prod) => prod.value)
@@ -46,6 +69,7 @@ class App extends Component {
           increaseBtn={this.increaseBtn}
           decreaseBtn={this.decreaseBtn}
           removeBtn={this.removeBtn}
+          onSort={this.onSort}
         />
         {/* <DisplayProducts
           prods={this.state.items}

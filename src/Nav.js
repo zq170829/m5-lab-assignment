@@ -46,6 +46,7 @@ function Nav(props) {
               products={props.prods}
               increaseBtn={props.increaseBtn}
               decreaseBtn={props.decreaseBtn}
+              onSort={props.onSort}
             />
           </Route>
           <Route path="/showcart">

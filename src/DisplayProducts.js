@@ -6,16 +6,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function DisplayProducts(props) {
   const [show, setShow] = useState(false);
+  // const [sortType, setSortType] = useState("asc");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+
   return (
     <div>
         <div className="p-5">
           <span>Sort Price By: </span>
-          <select>
-            <option>Normal</option>
-            <option>Lowest</option>
-            <option>Highest</option>
+          <select onChange={(e)=>props.onSort(props.prods.price, e.target.value)}>
+            <option value="">Normal</option>
+            <option value="lowest">Lowest</option>
+            <option value="highest">Highest</option>
           </select>
         </div>
       <div>
