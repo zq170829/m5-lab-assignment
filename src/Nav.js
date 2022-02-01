@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   faShoppingCart,
-  faRegistered,
+  faRegistered
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -47,6 +47,7 @@ function Nav(props) {
               increaseBtn={props.increaseBtn}
               decreaseBtn={props.decreaseBtn}
               onSort={props.onSort}
+              sortType={props.sortType}
             />
           </Route>
           <Route path="/showcart">

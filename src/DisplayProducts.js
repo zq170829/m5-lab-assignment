@@ -10,18 +10,16 @@ function DisplayProducts(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-
   return (
     <div>
-        <div className="p-5">
-          <span>Sort Price By: </span>
-          <select onChange={(e)=>props.onSort(props.prods.price, e.target.value)}>
-            <option value="">Normal</option>
-            <option value="lowest">Lowest</option>
-            <option value="highest">Highest</option>
-          </select>
-        </div>
+      <div className="p-5">
+        <span>Sort Price By: </span>
+        <select onChange={(e) => props.onSort(props.products, e.target.value)}>
+          <option value="">Normal</option>
+          <option value="lowest">Lowest</option>
+          <option value="highest">Highest</option>
+        </select>
+      </div>
       <div>
         {props.products.map((product) => {
           return (
